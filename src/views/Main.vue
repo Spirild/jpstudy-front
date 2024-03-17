@@ -1,21 +1,41 @@
 <template>
     <div>
-        <router-view/>
+        <!-- <router-view/> -->
         <el-container>
-            <el-aside width="200px">Aside</el-aside>
+            <el-aside width="200px">
+                <self-aside />
+            </el-aside>
             <el-container>
-                <el-header>Header</el-header>
-                <el-main>Main</el-main>
-                <el-footer>Footer</el-footer>
+                <el-header>
+                    <self-header />
+                </el-header>
+                <el-main>
+                    <router-view/>
+                </el-main>
+                <!-- <el-footer>Footer</el-footer> -->
             </el-container>
         </el-container>
     </div>
 </template>
 
 <script>
+import SelfAside from '../components/SelfAside.vue'
+import SelfHeader from '../components/SelfHeader.vue'
 export default {
     data(){
         return {}
+    },
+    components: {
+        SelfAside,
+        SelfHeader
     }
 }
 </script>
+<style>
+.el-header {
+    padding: 0%
+}
+.el-main {
+    padding: 0%
+}
+</style>

@@ -12,8 +12,15 @@
   },
   "dependencies": {
     "element-ui": "^2.15.14",
+    "google-protobuf": "^3.21.2",
+    "install": "^0.13.0",
+    "less": "^3.0.0",
+    "less-loader": "^5.0.0",
+    "markdown-it": "^14.0.0",
+    "mavon-editor": "^2.10.4",
     "resource": "^0.8.1",
     "vue": "^2.5.2",
+    "vue-quill-editor": "^3.0.6",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1"
   },
