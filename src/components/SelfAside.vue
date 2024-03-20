@@ -2,8 +2,6 @@
     <el-menu
       default-active="1-4-1"
       class="el-menu-vertical-demo"
-      @open="handleOpen"
-      @close="handleClose"
       :collapse="isCollapse"
       background-color="#545c64"
       text-color="#fff"
@@ -104,12 +102,12 @@
       };
     },
     methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
-      },
+      // handleOpen(key, keyPath) {
+      //   console.log(key, keyPath);
+      // },
+      // handleClose(key, keyPath) {
+      //   console.log(key, keyPath);
+      // },
       clickMenu(item) {
         console.log(item)
         if (this.$route.path !== item.path && !(this.$route.path === '/home' && (item.path === '/'))) {

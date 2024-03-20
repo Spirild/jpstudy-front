@@ -3,7 +3,8 @@
     <div class = "searchBackground">
         <div>
             <input type="text" id="word" placeholder="请输入日语单词" v-model="JpWord" class="searchInput">
-            <button type="button" @click="stranslate()" class="searchButton">翻译</button>
+            <button type="button" @click="stranslate()" class="searchButton" v-if="!isLoading">翻译</button>
+            <i class="el-icon-loading searchButton" v-if="isLoading"></i>
         </div>
         <div v-if="IsTranslated" class="result">
             <el-table
@@ -56,12 +57,16 @@
     .searchButton[type=button] {
       background-color: #4CAF50;
       color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
+      padding: 10px 20px;
+      /* margin: 8px 0; */
       border: none;
       border-radius: 4px;
       cursor: pointer;
       white-space: nowrap;
+    }
+
+    .search-element {
+        height: 20px;
     }
 
     /* .button[type=button]:hover {
@@ -97,21 +102,25 @@ export default {
         return {
             JpWord: "",
             IsTranslated: false,
+            isLoading: false,
             tableData: [],
         }
     },
     methods: {
         async stranslate() {
-            this.IsTranslated = false
-            this.tableData = []
+            // this.IsTranslated = false
+            
             var req = {
                 "word": this.JpWord
             }
+            this.isLoading = true
             var data = await HttpRequest.commonRequest("/lookup", req)
-
+            this.tableData = []
             data.WordList.forEach(element => {
                 this.tableData.push(element)
             });
+            debugger
+            this.isLoading = false
             this.IsTranslated = true
         }
     }

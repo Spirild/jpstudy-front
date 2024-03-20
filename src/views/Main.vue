@@ -25,6 +25,15 @@ export default {
     data(){
         return {}
     },
+    created() {
+        // 模拟登录成功了
+
+        // 这应该是从服务器获取的实际用户ID。目前先用我自己的
+        const userId = 296099941;   
+  
+        // 将用户ID存储到LocalStorage中  
+        localStorage.setItem('userId', userId);
+    },
     components: {
         SelfAside,
         SelfHeader

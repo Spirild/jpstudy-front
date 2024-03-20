@@ -34,8 +34,8 @@
       flex-direction: column;
       justify-content: center; */
       align-items: center;
-      width: auto;
-      height: 100vh;
+      /* width: 100%; */
+      height: 100%;
     }
 
   h1, h2 {

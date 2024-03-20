@@ -1,5 +1,7 @@
 const HttpRequest = {
     async commonRequest( path, req ) {
+        var user = localStorage.getItem('userId');
+        req.user = user
         var address = process.env.BACK_URL    
         var url = address + path;
         
@@ -38,6 +40,8 @@ const HttpRequest = {
 const JpLiteHttpRequest = {
 
     async getJpLiteTable( req ) {
+        var user = localStorage.getItem('userId');
+        req.common.user = user
         var address = process.env.BACK_URL    
         var url = address + "/selectJpTable";
         
