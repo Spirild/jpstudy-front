@@ -6,10 +6,10 @@
                 <self-aside />
             </el-aside>
             <el-container>
-                <el-header>
+                <el-header class="web-el-header">
                     <self-header />
                 </el-header>
-                <el-main>
+                <el-main class="web-el-main">
                     <router-view/>
                 </el-main>
                 <!-- <el-footer>Footer</el-footer> -->
@@ -31,11 +31,11 @@ export default {
     }
 }
 </script>
-<style>
-.el-header {
+<style scoped>
+.web-el-header {
     padding: 0%
 }
-.el-main {
+.web-el-main {
     padding: 0%
 }
 </style>
